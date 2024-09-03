@@ -1,0 +1,126 @@
+.sidebar-menu {
+    position: absolute;
+    width: 60px;
+    height: calc(100% - 60px);
+    background-color: #1b1b1b;
+    top: 60px;
+    left: 0;
+    transition: width 0.3s;
+    z-index: 9999;
+}
+
+.sidebar-menu:hover {
+    width: 230px;
+
+    .menu-item-desc {
+        display: block;
+        padding-left: 10px;
+    }
+
+    .menu-item-title {
+        justify-content: start;
+        padding: 5px 20px;
+    }
+
+    .menu {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .menu::-webkit-scrollbar {
+        width: 0.4em;
+    }
+     
+    .menu::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px #1b1b1b;
+    }
+     
+    .menu::-webkit-scrollbar-thumb {
+      background-color: var(--orange-default);
+    }
+}
+
+.sidebar-menu .menu {
+    width: 100%;
+    height: calc(100% - 30px);
+    overflow: hidden;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.menu-item-icon {
+    color: var(--orange-default);
+    font-size: 1.8rem;
+    transition: 0.2s;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.menu-item-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #1b1b1b;
+}
+
+.menu-item-desc {
+    display: none;
+    color: var(--orange-default);
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+
+.menu-item-title:hover {
+    .menu-item-icon {
+        color: var(--orange-hover);
+        transform: translateY(-3px);
+    }
+    
+    .menu-item-desc {
+        color: var(--orange-hover);
+        transform: translateY(-3px);
+    }
+}
+
+.menu-item-title:active {
+    background-color: var(--orange-active);
+
+    .menu-item-icon {
+        color: #000;
+    }
+    
+    .menu-item-desc {
+        color: #000;
+    }
+}
+
+
+.menu-item-sub-menu-item {
+    padding: 8px 0;
+    cursor: pointer;
+    color: var(--orange-default);
+    text-transform: uppercase;
+}
+
+.menu-item-sub-menu-item:hover {
+    color: var(--orange-hover);
+    transform: translateY(-3px);
+}
+
+.menu-item-sub-menu {
+    padding-left: 40px;
+    width: 100%;
+    background-color: #2d2d2d;
+}
