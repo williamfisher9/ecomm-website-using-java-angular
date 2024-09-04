@@ -1,3 +1,21 @@
 <div class="products-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Unit Price</td>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of products; track $index) {
+                <tr>
+                    <td>{{$index}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.unitPrice}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
     
 </div>
