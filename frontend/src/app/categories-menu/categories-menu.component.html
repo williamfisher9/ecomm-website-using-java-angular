@@ -1,0 +1,16 @@
+<div class="sidebar-menu">
+    <div class="menu">
+
+        @for (item of categories; track $index) {
+            <div class="menu-item">
+                <div class="menu-item-title" routerLink="/category/{{item.id}}">
+                    <div class="menu-item-icon">
+                        <i class={{item.categoryStyle}}></i>
+                    </div>
+                    <div class="menu-item-desc">{{item.categoryName}}</div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

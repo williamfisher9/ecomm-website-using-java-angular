@@ -4,11 +4,10 @@ import com.apps.ecomm.model.Product;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public interface ProductService {
-    Optional<Product> getProductById(long id);
-    List<Product> getAllProducts();
+    List<Product> findByCategoryId(long id);
     Product createProduct(Product product);
+    List<Product> getAllProducts();
 }

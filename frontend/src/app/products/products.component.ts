@@ -1,27 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
-import { Product } from './product';
-import { CurrencyPipe } from '@angular/common';
+import { Product } from '../model/product';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CurrencyPipe],
+  imports: [],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
 
-export class ProductsComponent implements OnInit{
+export class ProductsComponent {
+
   products : Product[] = [];
 
-  constructor(private productService : ProductService) {}
-
-  ngOnInit(): void {
-    this.listProducts();
+  constructor(private route : ActivatedRoute, private router : Router, private productService : ProductService){
+    this.route.paramMap.subscribe((data) => {this.getProductsByCategoryId(Number(data.get('id')))});
   }
 
-  listProducts() {
-    this.productService.getProductList().subscribe(
+  getProductsByCategoryId(currentCategoryId: number) {
+    this.productService.getProductsByCategoryId(currentCategoryId).subscribe(
       data => {
         this.products = data;
       }

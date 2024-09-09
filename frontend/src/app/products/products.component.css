@@ -1,7 +1,0 @@
-.products-container {
-    position: absolute;
-    top: 60px;
-    left: 60px;
-    width: calc(100svw - 60px);
-    height: calc(100svh - 60px);
-}

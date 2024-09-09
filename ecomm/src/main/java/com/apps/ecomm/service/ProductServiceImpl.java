@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 
 @Component
 public class ProductServiceImpl implements ProductService{
+
     private final ProductRepository repository;
 
     @Autowired
@@ -18,17 +18,17 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public Optional<Product> getProductById(long id) {
-        return repository.findById(id);
-    }
-
-    @Override
-    public List<Product> getAllProducts() {
-        return repository.findAll();
+    public List<Product> findByCategoryId(long id) {
+        return repository.findByCategoryId(id);
     }
 
     @Override
     public Product createProduct(Product product) {
         return repository.save(product);
+    }
+
+    @Override
+    public List<Product> getAllProducts() {
+        return repository.findAll();
     }
 }

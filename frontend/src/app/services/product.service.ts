@@ -1,9 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Product } from '../products/product';
-
-import { map } from 'rxjs/operators'; 
+import { map, Observable } from 'rxjs';
+import { Product } from '../model/product';
 
 @Injectable({
   providedIn: 'root'
@@ -11,21 +9,22 @@ import { map } from 'rxjs/operators';
 
 export class ProductService {
 
-  private baseUrl = "http://localhost:8080/api/v1/products";
+  baseUrl = "http://localhost:8080/api/v1/categories";
 
-  constructor(private httpClient : HttpClient) { 
-
+  constructor(private http : HttpClient) {
   }
 
-  getProductList() : Observable<Product[]> {
-    return this.httpClient
-    .get<GetResponse>(this.baseUrl)
+  getProductsByCategoryId(categoryId : number) : Observable<Product[]> {
+    console.log(`${this.baseUrl}/${categoryId}`)
+    return this.http
+    .get<Products>(`${this.baseUrl}/${categoryId}`)
     .pipe(
-      map(response => response.products)
+      map(response => response.items)
     );
   }
+
 }
 
-interface GetResponse {
-  products: Product[]
+interface Products {
+  items: Product[];
 }

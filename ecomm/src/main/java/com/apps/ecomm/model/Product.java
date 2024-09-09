@@ -26,10 +26,11 @@ public class Product implements Serializable {
     private LocalDate lastUpdated;
     private boolean active;
     private String imageUrl;
+    private int categoryId;
 
     public Product(String name, String sku, String description, float unitPrice,
                    int unitsInStock, LocalDate dateCreated, LocalDate lastUpdated,
-                   boolean active, String imageUrl) {
+                   boolean active, String imageUrl, int categoryId) {
         this.name = name;
         this.sku = sku;
         this.description = description;
@@ -39,6 +40,7 @@ public class Product implements Serializable {
         this.lastUpdated = lastUpdated;
         this.active = active;
         this.imageUrl = imageUrl;
+        this.categoryId = categoryId;
     }
 
     public Product() {
@@ -124,17 +126,25 @@ public class Product implements Serializable {
         this.imageUrl = imageUrl;
     }
 
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return id == product.id && Float.compare(unitPrice, product.unitPrice) == 0 && unitsInStock == product.unitsInStock && active == product.active && Objects.equals(name, product.name) && Objects.equals(sku, product.sku) && Objects.equals(description, product.description) && Objects.equals(dateCreated, product.dateCreated) && Objects.equals(lastUpdated, product.lastUpdated) && Objects.equals(imageUrl, product.imageUrl);
+        return id == product.id && Float.compare(unitPrice, product.unitPrice) == 0 && unitsInStock == product.unitsInStock && active == product.active && categoryId == product.categoryId && Objects.equals(name, product.name) && Objects.equals(sku, product.sku) && Objects.equals(description, product.description) && Objects.equals(dateCreated, product.dateCreated) && Objects.equals(lastUpdated, product.lastUpdated) && Objects.equals(imageUrl, product.imageUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, sku, description, unitPrice, unitsInStock, dateCreated, lastUpdated, active, imageUrl);
+        return Objects.hash(id, name, sku, description, unitPrice, unitsInStock, dateCreated, lastUpdated, active, imageUrl, categoryId);
     }
 
     @Override
@@ -150,6 +160,7 @@ public class Product implements Serializable {
                 ", lastUpdated=" + lastUpdated +
                 ", active=" + active +
                 ", imageUrl='" + imageUrl + '\'' +
+                ", categoryId=" + categoryId +
                 '}';
     }
 }
