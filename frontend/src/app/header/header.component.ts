@@ -9,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  searchPhrase : string = "";
+
+  handleChange(event : any) {
+    console.log(event);
+  }
+
 }
