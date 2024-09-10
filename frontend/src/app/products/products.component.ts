@@ -1,30 +1,50 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { Product } from '../model/product';
+import { Subscription } from 'rxjs';
+import { DataService } from '../services/data.service';
+import { SearchService } from '../services/search.service';
 
 @Component({
   selector: 'app-products',
   standalone: true,
   imports: [],
   templateUrl: './products.component.html',
-  styleUrl: './products.component.css'
+  styleUrl: './products.component.css',
 })
+export class ProductsComponent implements OnInit {
+  products: Product[] = [];
 
-export class ProductsComponent {
 
-  products : Product[] = [];
+  constructor(
+    private route: ActivatedRoute,
+    private productService: ProductService,
+    private dataService: DataService,
+    private searchService: SearchService
+  ) {}
 
-  constructor(private route : ActivatedRoute, private router : Router, private productService : ProductService){
-    this.route.paramMap.subscribe((data) => {this.getProductsByCategoryId(Number(data.get('id')))});
+  ngOnInit(): void {
+    this.route.paramMap.subscribe((data) => {
+      this.getProductsByCategoryId(Number(data.get('id')));
+    });
+
+    
+  }
+
+
+
+  addToCart(name : string) {
+    this.dataService.addToCart(name);
   }
 
   getProductsByCategoryId(currentCategoryId: number) {
-    this.productService.getProductsByCategoryId(currentCategoryId).subscribe(
-      data => {
-        this.products = data;
-      }
-    )
+    
+      this.productService
+        .getProductsByCategoryId(currentCategoryId)
+        .subscribe((data) => {
+          this.products = data;
+        });
+    
   }
-
 }

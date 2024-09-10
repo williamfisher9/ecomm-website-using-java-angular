@@ -1,5 +1,4 @@
 .sidebar-menu {
-    position: absolute;
     width: 60px;
     height: calc(100% - 60px);
     background-color: #1b1b1b;
@@ -7,6 +6,7 @@
     left: 0;
     transition: width 0.3s;
     z-index: 9999;
+    position: fixed;
 }
 
 .sidebar-menu:hover {

@@ -1,0 +1,12 @@
+.icon {
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+.icon:hover {
+    color: cadetblue;
+}
+
+.icons-container {
+    text-align: center;
+}
