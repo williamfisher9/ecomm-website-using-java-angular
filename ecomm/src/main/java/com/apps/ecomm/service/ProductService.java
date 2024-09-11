@@ -10,4 +10,5 @@ public interface ProductService {
     List<Product> findByCategoryId(long id);
     Product createProduct(Product product);
     List<Product> getAllProducts();
+    List<Product> findByNameContainingIgnoreCase(String name);
 }

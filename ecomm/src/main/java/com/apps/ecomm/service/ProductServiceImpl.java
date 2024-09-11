@@ -31,4 +31,9 @@ public class ProductServiceImpl implements ProductService{
     public List<Product> getAllProducts() {
         return repository.findAll();
     }
+
+    @Override
+    public List<Product> findByNameContainingIgnoreCase(String name) {
+        return repository.findByNameContainingIgnoreCase(name);
+    }
 }
