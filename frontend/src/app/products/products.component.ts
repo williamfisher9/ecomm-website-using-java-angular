@@ -28,14 +28,10 @@ export class ProductsComponent implements OnInit {
     this.route.paramMap.subscribe((data) => {
       this.getProductsByCategoryId(Number(data.get('id')));
     });
-
-    
   }
 
-
-
-  addToCart(name : string) {
-    this.dataService.addToCart(name);
+  addToCart(item : Product) {
+    this.dataService.addToCart(item);
   }
 
   getProductsByCategoryId(currentCategoryId: number) {
