@@ -13,6 +13,7 @@ import { SearchService } from '../services/search.service';
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
 })
+
 export class ProductsComponent implements OnInit {
   products: Product[] = [];
 
@@ -32,6 +33,10 @@ export class ProductsComponent implements OnInit {
 
   addToCart(item : Product) {
     this.dataService.addToCart(item);
+  }
+
+  addToFavorite(item : Product) {
+    this.dataService.addToFavorite(item);
   }
 
   getProductsByCategoryId(currentCategoryId: number) {

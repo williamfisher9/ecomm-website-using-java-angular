@@ -138,3 +138,8 @@
         background-color: var(--orange-hover);
     }
 }
+
+.header-icons-container {
+    display: flex;
+    height: 100%;
+}

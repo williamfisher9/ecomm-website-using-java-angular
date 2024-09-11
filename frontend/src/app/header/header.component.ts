@@ -19,11 +19,13 @@ export class HeaderComponent implements OnInit{
   products : Product[] = [];
 
   cartItemsCount : number = 0;
+  favoriteItemsCount : number = 0;
 
   constructor(private searchService : SearchService, private dataService : DataService) {}
   
   ngOnInit(): void {
     this.dataService.cartItems.subscribe(val => this.cartItemsCount = val.length);
+    this.dataService.favoriteItems.subscribe(val => this.favoriteItemsCount = val.length);
   }
 
   handleChange(e : any) { }
