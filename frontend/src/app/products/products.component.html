@@ -1,18 +1,21 @@
 <div class="container-fluid py-4">
-    <div style="display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap;">
+    <div class="products-container">
         @for (item of products; track $index) {
-            <div class="card" style="width: 16rem; overflow: hidden;">
+          <div style="width: 100%">
+            <div class="card" style="width: 16rem; height:22rem; overflow: hidden; margin: auto;">
                 <input type="hidden" id="productId" name="productId" value={{item.id}} />
                 <img src={{item.imageUrl}} style="width: 100%; height: 150px;" alt={{item.name}}>
                 <div class="card-body">
                   <h5 class="card-title">{{item.name}}</h5>
-                  <p class="card-text">{{item.description}}</p>
+                  <p class="card-text" style="height: 80px;">{{item.description}}</p>
                   <div class="icons-container">
                     <i class="icon fa-solid fa-cart-plus fa-xl" (click)="addToCart(item)"></i>
                     <i class="icon fa-solid fa-heart fa-xl" (click)="addToFavorite(item)"></i>
+                    <i class="icon fa-solid fa-circle-info fa-xl" routerLink="/products/{{item.id}}"></i>                    
                   </div>
                 </div>
               </div>
+            </div>
         }
     </div>
 </div>

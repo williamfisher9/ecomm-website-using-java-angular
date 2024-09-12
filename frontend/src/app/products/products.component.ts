@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { Product } from '../model/product';
 import { Subscription } from 'rxjs';
@@ -9,7 +9,7 @@ import { SearchService } from '../services/search.service';
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
 })

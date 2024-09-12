@@ -36,22 +36,22 @@ public class AppConfigs implements CommandLineRunner {
         categoryRepository.save(category4);
         categoryRepository.save(category5);
 
-        Product product1 = new Product("Dell Laptop", "uki2819", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 2);
+        Product product1 = new Product("Dell Laptop", "uki2819", "Best laptop in the market and forever Best laptop in the market and forever", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 2);
         Product product2 = new Product("Lenovo Laptop", "hdj1234", "Best portable", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 2);
-        Product product3 = new Product("Camera", "kas1213", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 5);
-        Product product4 = new Product("Mouse", "kaa1222", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 5);
-        Product product5 = new Product("Keyboard", "opl1234", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 3);
-        Product product6 = new Product("Monitor", "gsh1123", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 4);
-        Product product7 = new Product("Mouse Pad", "qwq1123", "Best mouse pad", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 5);
-        Product product8 = new Product("Case", "wqw1121", "Best case", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 5);
-        Product product9 = new Product("Dell Laptop", "uki2819", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 2);
-        Product product10 = new Product("Lenovo Laptop", "hdj1234", "Best portable", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 2);
-        Product product11 = new Product("Camera", "kas1213", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 5);
-        Product product12 = new Product("Mouse", "kaa1222", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 5);
-        Product product13 = new Product("Keyboard", "opl1234", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 3);
-        Product product14 = new Product("Monitor", "gsh1123", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 4);
-        Product product15 = new Product("Mouse Pad", "qwq1123", "Best mouse pad", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 5);
-        Product product16 = new Product("Case", "wqw1121", "Best case", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 5);
+        Product product3 = new Product("Sony Camera", "kas1213", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 5);
+        Product product4 = new Product("Apple Mouse", "kaa1222", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 5);
+        Product product5 = new Product("Apple Keyboard", "opl1234", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 3);
+        Product product6 = new Product("LG Monitor", "gsh1123", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 4);
+        Product product7 = new Product("Mouse Pad - Fabric", "qwq1123", "Best mouse pad", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 5);
+        Product product8 = new Product("Dell Case", "wqw1121", "Best case", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 5);
+        Product product9 = new Product("Sony Laptop", "uki2819", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 2);
+        Product product10 = new Product("Samsung Laptop", "hdj1234", "Best portable", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 2);
+        Product product11 = new Product("Samsung Camera", "kas1213", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 5);
+        Product product12 = new Product("Microsoft Mouse", "kaa1222", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 5);
+        Product product13 = new Product("Microsoft Keyboard", "opl1234", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 3);
+        Product product14 = new Product("Samsung Monitor", "gsh1123", "Best laptop", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 4);
+        Product product15 = new Product("Mouse Pad - Plastic", "qwq1123", "Best mouse pad", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 5);
+        Product product16 = new Product("Alien Case", "wqw1121", "Best case", 1900F, 800, LocalDate.now(), LocalDate.now(), true, "assets/02.jpg", 5);
 
         productRepository.save(product1);
         productRepository.save(product2);

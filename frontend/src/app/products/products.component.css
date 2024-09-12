@@ -4,9 +4,21 @@
 }
 
 .icon:hover {
-    color: cadetblue;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .icons-container {
     text-align: center;
+}
+
+.card-text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    row-gap: 20px;
 }

@@ -23,4 +23,10 @@ public class ProductsController {
         Response response = new Response(service.findByNameContainingIgnoreCase(phrase));
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/{id}")
+    public ResponseEntity<Response> getProductById(@PathVariable("id") long id){
+        Response response = new Response(service.getProductById(id));
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }
